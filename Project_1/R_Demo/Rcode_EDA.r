@@ -1,4 +1,4 @@
-setwd("c:/Users/fali/Desktop") #set up the working direction
+setwd("~/Desktop/STAT-350/Project_1/R_Demo")
 classdata = read.table("class.txt", header = TRUE)
 dim(classdata)
 head(classdata)

@@ -2,12 +2,12 @@
 # setwd("C:\Users\fangzi\Desktop") #wrong
 # setwd("C:/Users/fangzi/Desktop/Fang/Stat35000/Fall 2020/Lecture/Lecture 01")
 
-setwd("~/Desktop/STAT-350")
+setwd("~/Desktop/STAT-350/Misc Files")
 install.packages("geometry")
 
 seedlings=read.csv("seedlings.csv",header=T,na.strings="?") #loading Data
-fix(seedlings)
-dim(seedlings)
+fix(seedlings) # Must have X11 Fowarding for MacOS
+dim(seedlings) # Prints the number of rows and columns
 names(seedlings)
 seedlings=na.omit(seedlings) # remove the rows with any missing values 
 dim(seedlings)
@@ -73,7 +73,9 @@ hist(classdata$height, breaks = "Sturges", right=FALSE, xlab = "Height", main = 
 plot(classdata$height ~ classdata$weight, xlab = "Weight", ylab = "Height",main = "Scatter Plot")
 var(classdata)
 sd(classdata)
-sdy=sd(classdata$height)
+
+# calculates standard deviations separately for height and weight.
+sdy=sd(classdata$height) 
 sdx=sd(classdata$weight)
 covxy=cov(classdata$height, classdata$weight)
 r=covxy/(sdx*sdy)

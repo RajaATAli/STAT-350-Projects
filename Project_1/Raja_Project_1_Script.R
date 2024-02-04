@@ -137,6 +137,9 @@ print(paste("Covariance between Grain and Straw:", covariance))
 correlation <- covariance / (sd(grain) * sd(straw))
 print(paste("Correlation between Grain and Straw:", correlation))
 
+print(paste("Recheck of Correlation between Grain and Straw:", cor(grain, straw)))
+
+
 # G) Calculate Least Squares Estimates of the regression coefficients for the regression of Straw on Grain
 fit <- lm(straw ~ grain)
 coefficients <- coef(fit)
